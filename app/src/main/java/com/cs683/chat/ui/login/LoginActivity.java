@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,8 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cs683.chat.R;
-import com.cs683.chat.ui.login.LoginViewModel;
-import com.cs683.chat.ui.login.LoginViewModelFactory;
+import com.cs683.chat.ui.chat.ContactsListActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -74,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                 setResult(Activity.RESULT_OK);
 
                 //Complete and destroy login activity once successful
+                startActivity(new Intent(getBaseContext(), ContactsListActivity.class ));
                 finish();
             }
         });
